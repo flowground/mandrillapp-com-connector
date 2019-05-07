@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "send_at": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

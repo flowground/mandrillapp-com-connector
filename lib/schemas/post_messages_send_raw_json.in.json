@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "async": {
+                    "type": "boolean"
+                },
+                "from_email": {
+                    "type": "string"
+                },
+                "from_name": {
+                    "type": "string"
+                },
+                "ip_pool": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "raw_message": {
+                    "type": "string"
+                },
+                "return_path_domain": {
+                    "nullable": true
+                },
+                "send_at": {
+                    "type": "string"
+                },
+                "to": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

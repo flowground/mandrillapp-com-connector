@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "key": {
+                    "type": "string"
+                },
+                "raw_message": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

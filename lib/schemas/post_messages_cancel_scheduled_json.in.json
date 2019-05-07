@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "id": {
+                    "nullable": true
+                },
+                "key": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "client_address": {
+                    "type": "string"
+                },
+                "helo": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "mail_from": {
+                    "type": "string"
+                },
+                "raw_message": {
+                    "type": "string"
+                },
+                "to": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

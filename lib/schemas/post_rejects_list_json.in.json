@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "include_expired": {
+                    "type": "boolean"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "subaccount": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "subaccount": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

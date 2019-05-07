@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "create_pool": {
+                    "type": "boolean"
+                },
+                "ip": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "pool": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

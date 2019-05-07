@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "key": {
+                    "type": "string"
+                },
+                "q": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

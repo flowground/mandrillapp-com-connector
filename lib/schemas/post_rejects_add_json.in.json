@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "comment": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "subaccount": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

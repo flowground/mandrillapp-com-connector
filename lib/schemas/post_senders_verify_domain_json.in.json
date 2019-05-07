@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "domain": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "mailbox": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

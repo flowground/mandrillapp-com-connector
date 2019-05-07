@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "key": {
+                    "type": "string"
+                },
+                "pool": {
+                    "type": "string"
+                },
+                "warmup": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

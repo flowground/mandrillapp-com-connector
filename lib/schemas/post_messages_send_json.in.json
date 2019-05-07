@@ -1,0 +1,227 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "async": {
+                    "type": "boolean"
+                },
+                "ip_pool": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "message": {
+                    "properties": {
+                        "attachments": {
+                            "items": {
+                                "properties": {
+                                    "content": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "auto_html": {
+                            "nullable": true
+                        },
+                        "auto_text": {
+                            "nullable": true
+                        },
+                        "bcc_address": {
+                            "type": "string"
+                        },
+                        "from_email": {
+                            "type": "string"
+                        },
+                        "from_name": {
+                            "type": "string"
+                        },
+                        "global_merge_vars": {
+                            "items": {
+                                "properties": {
+                                    "content": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "google_analytics_campaign": {
+                            "type": "string"
+                        },
+                        "google_analytics_domains": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "headers": {
+                            "properties": {
+                                "Reply_To": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "html": {
+                            "type": "string"
+                        },
+                        "images": {
+                            "items": {
+                                "properties": {
+                                    "content": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "important": {
+                            "type": "boolean"
+                        },
+                        "inline_css": {
+                            "nullable": true
+                        },
+                        "merge": {
+                            "type": "boolean"
+                        },
+                        "merge_vars": {
+                            "items": {
+                                "properties": {
+                                    "rcpt": {
+                                        "type": "string"
+                                    },
+                                    "vars": {
+                                        "items": {
+                                            "properties": {
+                                                "content": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "metadata": {
+                            "properties": {
+                                "website": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "preserve_recipients": {
+                            "nullable": true
+                        },
+                        "recipient_metadata": {
+                            "items": {
+                                "properties": {
+                                    "rcpt": {
+                                        "type": "string"
+                                    },
+                                    "values": {
+                                        "properties": {
+                                            "user_id": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "return_path_domain": {
+                            "nullable": true
+                        },
+                        "signing_domain": {
+                            "nullable": true
+                        },
+                        "subaccount": {
+                            "type": "string"
+                        },
+                        "subject": {
+                            "type": "string"
+                        },
+                        "tags": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "text": {
+                            "type": "string"
+                        },
+                        "to": {
+                            "items": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "track_clicks": {
+                            "nullable": true
+                        },
+                        "track_opens": {
+                            "nullable": true
+                        },
+                        "tracking_domain": {
+                            "nullable": true
+                        },
+                        "url_strip_qs": {
+                            "nullable": true
+                        },
+                        "view_content_link": {
+                            "nullable": true
+                        }
+                    },
+                    "type": "object"
+                },
+                "send_at": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

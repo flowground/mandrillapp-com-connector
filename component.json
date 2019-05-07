@@ -1,0 +1,1564 @@
+{
+    "title": "Mandrill",
+    "description": "Mandrill is a reliable, scalable, and secure delivery API for transactional emails from websites and applications. It's ideal for sending data-driven transactional emails, including targeted e-commerce and personalized one-to-one messages.\n",
+    "docsUrl": "https://mandrillapp.com/api/docs/",
+    "url": "https://api.apis.guru/v2/specs/mandrillapp.com/1.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://mandrillapp.com/api/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "post_exports_activity_json": {
+            "main": "./lib/actions/post_exports_activity_json.js",
+            "title": "Begins an export of your activity history. The activity will be exported to a zip archive containing a single file named activity.csv in the same format as you would be able to export from your account's activity view. It includes the following fields: Date, Email Address, Sender, Subject, Status, Tags, Opens, Clicks, Bounce Detail. If you have configured any custom metadata fields, they will be included in the exported data.",
+            "description": "Begins an export of your activity history. The activity will be exported to a zip archive containing a single file named activity.csv in the same format as you would be able to export from your account's activity view. It includes the following fields: Date, Email Address, Sender, Subject, Status, Tags, Opens, Clicks, Bounce Detail. If you have configured any custom metadata fields, they will be included in the exported data.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_exports_activity_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_exports_info_json": {
+            "main": "./lib/actions/post_exports_info_json.js",
+            "title": "Returns information about an export job. If the export job's state is 'complete', the returned data will include a URL you can use to fetch the results. Every export job produces a zip archive, but the format of the archive is distinct for each job type. The api calls that initiate exports include more details about the output format for that job type.",
+            "description": "Returns information about an export job. If the export job's state is 'complete', the returned data will include a URL you can use to fetch the results. Every export job produces a zip archive, but the format of the archive is distinct for each job type. The api calls that initiate exports include more details about the output format for that job type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_exports_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_exports_list_json": {
+            "main": "./lib/actions/post_exports_list_json.js",
+            "title": "Returns a list of your exports.",
+            "description": "Returns a list of your exports.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_exports_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_exports_rejects_json": {
+            "main": "./lib/actions/post_exports_rejects_json.js",
+            "title": "Begins an export of your rejection blacklist. The blacklist will be exported to a zip archive containing a single file named rejects.csv that includes the following fields: email, reason, detail, created_at, expires_at, last_event_at, expires_at.",
+            "description": "Begins an export of your rejection blacklist. The blacklist will be exported to a zip archive containing a single file named rejects.csv that includes the following fields: email, reason, detail, created_at, expires_at, last_event_at, expires_at.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_exports_rejects_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_exports_whitelist_json": {
+            "main": "./lib/actions/post_exports_whitelist_json.js",
+            "title": "Begins an export of your rejection whitelist. The whitelist will be exported to a zip archive containing a single file named whitelist.csv that includes the following fields: email, detail, created_at.",
+            "description": "Begins an export of your rejection whitelist. The whitelist will be exported to a zip archive containing a single file named whitelist.csv that includes the following fields: email, detail, created_at.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_exports_whitelist_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_inbound_add_domain_json": {
+            "main": "./lib/actions/post_inbound_add_domain_json.js",
+            "title": "Add an inbound domain to your account",
+            "description": "Add an inbound domain to your account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_inbound_add_domain_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_inbound_add_route_json": {
+            "main": "./lib/actions/post_inbound_add_route_json.js",
+            "title": "Add a new mailbox route to an inbound domain",
+            "description": "Add a new mailbox route to an inbound domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_inbound_add_route_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_inbound_check_domain_json": {
+            "main": "./lib/actions/post_inbound_check_domain_json.js",
+            "title": "Check the MX settings for an inbound domain. The domain must have already been added with the add-domain call",
+            "description": "Check the MX settings for an inbound domain. The domain must have already been added with the add-domain call",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_inbound_check_domain_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_inbound_delete_domain_json": {
+            "main": "./lib/actions/post_inbound_delete_domain_json.js",
+            "title": "Delete an inbound domain from the account. All mail will stop routing for this domain immediately.",
+            "description": "Delete an inbound domain from the account. All mail will stop routing for this domain immediately.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_inbound_delete_domain_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_inbound_delete_route_json": {
+            "main": "./lib/actions/post_inbound_delete_route_json.js",
+            "title": "Delete an existing inbound mailbox route",
+            "description": "Delete an existing inbound mailbox route",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_inbound_delete_route_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_inbound_domains_json": {
+            "main": "./lib/actions/post_inbound_domains_json.js",
+            "title": "List the domains that have been configured for inbound delivery",
+            "description": "List the domains that have been configured for inbound delivery",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_inbound_domains_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_inbound_routes_json": {
+            "main": "./lib/actions/post_inbound_routes_json.js",
+            "title": "List the mailbox routes defined for an inbound domain",
+            "description": "List the mailbox routes defined for an inbound domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_inbound_routes_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_inbound_send_raw_json": {
+            "main": "./lib/actions/post_inbound_send_raw_json.js",
+            "title": "Take a raw MIME document destined for a domain with inbound domains set up, and send it to the inbound hook exactly as if it had been sent over SMTP",
+            "description": "Take a raw MIME document destined for a domain with inbound domains set up, and send it to the inbound hook exactly as if it had been sent over SMTP",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_inbound_send_raw_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_inbound_update_route_json": {
+            "main": "./lib/actions/post_inbound_update_route_json.js",
+            "title": "Update the pattern or webhook of an existing inbound mailbox route. If null is provided for any fields, the values will remain unchanged.",
+            "description": "Update the pattern or webhook of an existing inbound mailbox route. If null is provided for any fields, the values will remain unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_inbound_update_route_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_cancel_warmup_json": {
+            "main": "./lib/actions/post_ips_cancel_warmup_json.js",
+            "title": "Cancels the warmup process for a dedicated IP.",
+            "description": "Cancels the warmup process for a dedicated IP.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_cancel_warmup_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_check_custom_dns_json": {
+            "main": "./lib/actions/post_ips_check_custom_dns_json.js",
+            "title": "Tests whether a domain name is valid for use as the custom reverse DNS for a dedicated IP.",
+            "description": "Tests whether a domain name is valid for use as the custom reverse DNS for a dedicated IP.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_check_custom_dns_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_create_pool_json": {
+            "main": "./lib/actions/post_ips_create_pool_json.js",
+            "title": "Creates a pool and returns it. If a pool already exists with this name, no action will be performed.",
+            "description": "Creates a pool and returns it. If a pool already exists with this name, no action will be performed.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_create_pool_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_delete_pool_json": {
+            "main": "./lib/actions/post_ips_delete_pool_json.js",
+            "title": "Deletes a pool. A pool must be empty before you can delete it, and you cannot delete your default pool.",
+            "description": "Deletes a pool. A pool must be empty before you can delete it, and you cannot delete your default pool.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_delete_pool_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_delete_json": {
+            "main": "./lib/actions/post_ips_delete_json.js",
+            "title": "Deletes a dedicated IP. This is permanent and cannot be undone.",
+            "description": "Deletes a dedicated IP. This is permanent and cannot be undone.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_delete_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_info_json": {
+            "main": "./lib/actions/post_ips_info_json.js",
+            "title": "Retrieves information about a single dedicated ip.",
+            "description": "Retrieves information about a single dedicated ip.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_list_pools_json": {
+            "main": "./lib/actions/post_ips_list_pools_json.js",
+            "title": "Lists your dedicated IP pools.",
+            "description": "Lists your dedicated IP pools.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_list_pools_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_list_json": {
+            "main": "./lib/actions/post_ips_list_json.js",
+            "title": "Lists your dedicated IPs.",
+            "description": "Lists your dedicated IPs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_pool_info_json": {
+            "main": "./lib/actions/post_ips_pool_info_json.js",
+            "title": "Describes a single dedicated IP pool.",
+            "description": "Describes a single dedicated IP pool.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_pool_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_provision_json": {
+            "main": "./lib/actions/post_ips_provision_json.js",
+            "title": "Requests an additional dedicated IP for your account. Accounts may have one outstanding request at any time, and provisioning requests are processed within 24 hours.",
+            "description": "Requests an additional dedicated IP for your account. Accounts may have one outstanding request at any time, and provisioning requests are processed within 24 hours.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_provision_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_set_custom_dns_json": {
+            "main": "./lib/actions/post_ips_set_custom_dns_json.js",
+            "title": "Configures the custom DNS name for a dedicated IP.",
+            "description": "Configures the custom DNS name for a dedicated IP.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_set_custom_dns_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_set_pool_json": {
+            "main": "./lib/actions/post_ips_set_pool_json.js",
+            "title": "Moves a dedicated IP to a different pool.",
+            "description": "Moves a dedicated IP to a different pool.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_set_pool_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_ips_start_warmup_json": {
+            "main": "./lib/actions/post_ips_start_warmup_json.js",
+            "title": "Begins the warmup process for a dedicated IP. During the warmup process, Mandrill will gradually increase the percentage of your mail that is sent over the warming-up IP, over a period of roughly 30 days. The rest of your mail will be sent over shared IPs or other dedicated IPs in the same pool.",
+            "description": "Begins the warmup process for a dedicated IP. During the warmup process, Mandrill will gradually increase the percentage of your mail that is sent over the warming-up IP, over a period of roughly 30 days. The rest of your mail will be sent over shared IPs or other dedicated IPs in the same pool.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_ips_start_warmup_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_cancel_scheduled_json": {
+            "main": "./lib/actions/post_messages_cancel_scheduled_json.js",
+            "title": "Cancels a scheduled email.",
+            "description": "Cancels a scheduled email.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_cancel_scheduled_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_content_json": {
+            "main": "./lib/actions/post_messages_content_json.js",
+            "title": "Get the full content of a recently sent message",
+            "description": "Get the full content of a recently sent message",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_content_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_info_json": {
+            "main": "./lib/actions/post_messages_info_json.js",
+            "title": "Get the information for a single recently sent message",
+            "description": "Get the information for a single recently sent message",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_list_scheduled_json": {
+            "main": "./lib/actions/post_messages_list_scheduled_json.js",
+            "title": "Queries your scheduled emails by sender or recipient, or both.",
+            "description": "Queries your scheduled emails by sender or recipient, or both.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_list_scheduled_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_parse_json": {
+            "main": "./lib/actions/post_messages_parse_json.js",
+            "title": "Parse the full MIME document for an email message, returning the content of the message broken into its constituent pieces",
+            "description": "Parse the full MIME document for an email message, returning the content of the message broken into its constituent pieces",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_parse_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_reschedule_json": {
+            "main": "./lib/actions/post_messages_reschedule_json.js",
+            "title": "Reschedules a scheduled email.",
+            "description": "Reschedules a scheduled email.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_reschedule_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_search_time_series_json": {
+            "main": "./lib/actions/post_messages_search_time_series_json.js",
+            "title": "Search the content of recently sent messages and return the aggregated hourly stats for matching messages",
+            "description": "Search the content of recently sent messages and return the aggregated hourly stats for matching messages",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_search_time_series_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_search_json": {
+            "main": "./lib/actions/post_messages_search_json.js",
+            "title": "Search the content of recently sent messages and optionally narrow by date range, tags and senders. This method may be called up to 20 times per minute. If you need the data more often, you can use /messages/info.json to get the information for a single message, or webhooks to push activity to your own application for querying.",
+            "description": "Search the content of recently sent messages and optionally narrow by date range, tags and senders. This method may be called up to 20 times per minute. If you need the data more often, you can use /messages/info.json to get the information for a single message, or webhooks to push activity to your own application for querying.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_search_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_send_raw_json": {
+            "main": "./lib/actions/post_messages_send_raw_json.js",
+            "title": "Take a raw MIME document for a message, and send it exactly as if it were sent through Mandrill's SMTP servers",
+            "description": "Take a raw MIME document for a message, and send it exactly as if it were sent through Mandrill's SMTP servers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_send_raw_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_send_template_json": {
+            "main": "./lib/actions/post_messages_send_template_json.js",
+            "title": "Send a new transactional message through Mandrill using a template",
+            "description": "Send a new transactional message through Mandrill using a template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_send_template_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_messages_send_json": {
+            "main": "./lib/actions/post_messages_send_json.js",
+            "title": "Send a new transactional message through Mandrill",
+            "description": "Send a new transactional message through Mandrill",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_messages_send_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_metadata_add_json": {
+            "main": "./lib/actions/post_metadata_add_json.js",
+            "title": "Add a new custom metadata field to be indexed for the account.",
+            "description": "Add a new custom metadata field to be indexed for the account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_metadata_add_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_metadata_delete_json": {
+            "main": "./lib/actions/post_metadata_delete_json.js",
+            "title": "Delete an existing custom metadata field. Deletion isn't instataneous, and /metadata/list will continue to return the field until the asynchronous deletion process is complete.",
+            "description": "Delete an existing custom metadata field. Deletion isn't instataneous, and /metadata/list will continue to return the field until the asynchronous deletion process is complete.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_metadata_delete_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_metadata_list_json": {
+            "main": "./lib/actions/post_metadata_list_json.js",
+            "title": "Get the list of custom metadata fields indexed for the account.",
+            "description": "Get the list of custom metadata fields indexed for the account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_metadata_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_metadata_update_json": {
+            "main": "./lib/actions/post_metadata_update_json.js",
+            "title": "Update an existing custom metadata field.",
+            "description": "Update an existing custom metadata field.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_metadata_update_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_rejects_add_json": {
+            "main": "./lib/actions/post_rejects_add_json.js",
+            "title": "Adds an email to your email rejection blacklist. Addresses that you add manually will never expire and there is no reputation penalty for removing them from your blacklist. Attempting to blacklist an address that has been whitelisted will have no effect.",
+            "description": "Adds an email to your email rejection blacklist. Addresses that you add manually will never expire and there is no reputation penalty for removing them from your blacklist. Attempting to blacklist an address that has been whitelisted will have no effect.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_rejects_add_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_rejects_delete_json": {
+            "main": "./lib/actions/post_rejects_delete_json.js",
+            "title": "Deletes an email rejection. There is no limit to how many rejections you can remove from your blacklist, but keep in mind that each deletion has an affect on your reputation.",
+            "description": "Deletes an email rejection. There is no limit to how many rejections you can remove from your blacklist, but keep in mind that each deletion has an affect on your reputation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_rejects_delete_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_rejects_list_json": {
+            "main": "./lib/actions/post_rejects_list_json.js",
+            "title": "Retrieves your email rejection blacklist. You can provide an email address to limit the results. Returns up to 1000 results. By default, entries that have expired are excluded from the results; set include_expired to true to include them.",
+            "description": "Retrieves your email rejection blacklist. You can provide an email address to limit the results. Returns up to 1000 results. By default, entries that have expired are excluded from the results; set include_expired to true to include them.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_rejects_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_senders_add_domain_json": {
+            "main": "./lib/actions/post_senders_add_domain_json.js",
+            "title": "Adds a sender domain to your account. Sender domains are added automatically as you send, but you can use this call to add them ahead of time.",
+            "description": "Adds a sender domain to your account. Sender domains are added automatically as you send, but you can use this call to add them ahead of time.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_senders_add_domain_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_senders_check_domain_json": {
+            "main": "./lib/actions/post_senders_check_domain_json.js",
+            "title": "Checks the SPF and DKIM settings for a domain. If you haven't already added this domain to your account, it will be added automatically.",
+            "description": "Checks the SPF and DKIM settings for a domain. If you haven't already added this domain to your account, it will be added automatically.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_senders_check_domain_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_senders_domains_json": {
+            "main": "./lib/actions/post_senders_domains_json.js",
+            "title": "Returns the sender domains that have been added to this account.",
+            "description": "Returns the sender domains that have been added to this account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_senders_domains_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_senders_info_json": {
+            "main": "./lib/actions/post_senders_info_json.js",
+            "title": "Return more detailed information about a single sender, including aggregates of recent stats",
+            "description": "Return more detailed information about a single sender, including aggregates of recent stats",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_senders_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_senders_list_json": {
+            "main": "./lib/actions/post_senders_list_json.js",
+            "title": "Return the senders that have tried to use this account.",
+            "description": "Return the senders that have tried to use this account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_senders_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_senders_time_series_json": {
+            "main": "./lib/actions/post_senders_time_series_json.js",
+            "title": "Return the recent history (hourly stats for the last 30 days) for a sender",
+            "description": "Return the recent history (hourly stats for the last 30 days) for a sender",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_senders_time_series_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_senders_verify_domain_json": {
+            "main": "./lib/actions/post_senders_verify_domain_json.js",
+            "title": "Sends a verification email in order to verify ownership of a domain. Domain verification is an optional step to confirm ownership of a domain. Once a domain has been verified in a Mandrill account, other accounts may not have their messages signed by that domain unless they also verify the domain. This prevents other Mandrill accounts from sending mail signed by your domain.",
+            "description": "Sends a verification email in order to verify ownership of a domain. Domain verification is an optional step to confirm ownership of a domain. Once a domain has been verified in a Mandrill account, other accounts may not have their messages signed by that domain unless they also verify the domain. This prevents other Mandrill accounts from sending mail signed by your domain.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_senders_verify_domain_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_subaccounts_add_json": {
+            "main": "./lib/actions/post_subaccounts_add_json.js",
+            "title": "Add a new subaccount",
+            "description": "Add a new subaccount",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_subaccounts_add_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_subaccounts_delete_json": {
+            "main": "./lib/actions/post_subaccounts_delete_json.js",
+            "title": "Delete an existing subaccount. Any email related to the subaccount will be saved, but stats will be removed and any future sending calls to this subaccount will fail.",
+            "description": "Delete an existing subaccount. Any email related to the subaccount will be saved, but stats will be removed and any future sending calls to this subaccount will fail.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_subaccounts_delete_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_subaccounts_info_json": {
+            "main": "./lib/actions/post_subaccounts_info_json.js",
+            "title": "Given the ID of an existing subaccount, return the data about it",
+            "description": "Given the ID of an existing subaccount, return the data about it",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_subaccounts_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_subaccounts_list_json": {
+            "main": "./lib/actions/post_subaccounts_list_json.js",
+            "title": "Get the list of subaccounts defined for the account, optionally filtered by a prefix",
+            "description": "Get the list of subaccounts defined for the account, optionally filtered by a prefix",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_subaccounts_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_subaccounts_pause_json": {
+            "main": "./lib/actions/post_subaccounts_pause_json.js",
+            "title": "Pause a subaccount's sending. Any future emails delivered to this subaccount will be queued for a maximum of 3 days until the subaccount is resumed.",
+            "description": "Pause a subaccount's sending. Any future emails delivered to this subaccount will be queued for a maximum of 3 days until the subaccount is resumed.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_subaccounts_pause_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_subaccounts_resume_json": {
+            "main": "./lib/actions/post_subaccounts_resume_json.js",
+            "title": "Resume a paused subaccount's sending",
+            "description": "Resume a paused subaccount's sending",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_subaccounts_resume_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_subaccounts_update_json": {
+            "main": "./lib/actions/post_subaccounts_update_json.js",
+            "title": "Update an existing subaccount",
+            "description": "Update an existing subaccount",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_subaccounts_update_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_tags_all_time_series_json": {
+            "main": "./lib/actions/post_tags_all_time_series_json.js",
+            "title": "Return the recent history (hourly stats for the last 30 days) for all tags",
+            "description": "Return the recent history (hourly stats for the last 30 days) for all tags",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_tags_all_time_series_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_tags_delete_json": {
+            "main": "./lib/actions/post_tags_delete_json.js",
+            "title": "Deletes a tag permanently. Deleting a tag removes the tag from any messages that have been sent, and also deletes the tag's stats. There is no way to undo this operation, so use it carefully.",
+            "description": "Deletes a tag permanently. Deleting a tag removes the tag from any messages that have been sent, and also deletes the tag's stats. There is no way to undo this operation, so use it carefully.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_tags_delete_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_tags_info_json": {
+            "main": "./lib/actions/post_tags_info_json.js",
+            "title": "Return more detailed information about a single tag, including aggregates of recent stats",
+            "description": "Return more detailed information about a single tag, including aggregates of recent stats",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_tags_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_tags_list_json": {
+            "main": "./lib/actions/post_tags_list_json.js",
+            "title": "Return all of the user-defined tag information",
+            "description": "Return all of the user-defined tag information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_tags_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_tags_time_series_json": {
+            "main": "./lib/actions/post_tags_time_series_json.js",
+            "title": "Return the recent history (hourly stats for the last 30 days) for a tag",
+            "description": "Return the recent history (hourly stats for the last 30 days) for a tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_tags_time_series_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_templates_add_json": {
+            "main": "./lib/actions/post_templates_add_json.js",
+            "title": "Add a new template",
+            "description": "Add a new template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_templates_add_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_templates_delete_json": {
+            "main": "./lib/actions/post_templates_delete_json.js",
+            "title": "Delete a template",
+            "description": "Delete a template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_templates_delete_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_templates_info_json": {
+            "main": "./lib/actions/post_templates_info_json.js",
+            "title": "Get the information for an existing template",
+            "description": "Get the information for an existing template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_templates_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_templates_list_json": {
+            "main": "./lib/actions/post_templates_list_json.js",
+            "title": "Return a list of all the templates available to this user",
+            "description": "Return a list of all the templates available to this user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_templates_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_templates_publish_json": {
+            "main": "./lib/actions/post_templates_publish_json.js",
+            "title": "Publish the content for the template. Any new messages sent using this template will start using the content that was previously in draft.",
+            "description": "Publish the content for the template. Any new messages sent using this template will start using the content that was previously in draft.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_templates_publish_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_templates_render_json": {
+            "main": "./lib/actions/post_templates_render_json.js",
+            "title": "Inject content and optionally merge fields into a template, returning the HTML that results",
+            "description": "Inject content and optionally merge fields into a template, returning the HTML that results",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_templates_render_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_templates_time_series_json": {
+            "main": "./lib/actions/post_templates_time_series_json.js",
+            "title": "Return the recent history (hourly stats for the last 30 days) for a template",
+            "description": "Return the recent history (hourly stats for the last 30 days) for a template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_templates_time_series_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_templates_update_json": {
+            "main": "./lib/actions/post_templates_update_json.js",
+            "title": "Update the code for an existing template. If null is provided for any fields, the values will remain unchanged.",
+            "description": "Update the code for an existing template. If null is provided for any fields, the values will remain unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_templates_update_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_urls_add_tracking_domain_json": {
+            "main": "./lib/actions/post_urls_add_tracking_domain_json.js",
+            "title": "Add a tracking domain to your account",
+            "description": "Add a tracking domain to your account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_urls_add_tracking_domain_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_urls_check_tracking_domain_json": {
+            "main": "./lib/actions/post_urls_check_tracking_domain_json.js",
+            "title": "Checks the CNAME settings for a tracking domain. The domain must have been added already with the add-tracking-domain call",
+            "description": "Checks the CNAME settings for a tracking domain. The domain must have been added already with the add-tracking-domain call",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_urls_check_tracking_domain_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_urls_list_json": {
+            "main": "./lib/actions/post_urls_list_json.js",
+            "title": "Get the 100 most clicked URLs",
+            "description": "Get the 100 most clicked URLs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_urls_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_urls_search_json": {
+            "main": "./lib/actions/post_urls_search_json.js",
+            "title": "Return the 100 most clicked URLs that match the search query given",
+            "description": "Return the 100 most clicked URLs that match the search query given",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_urls_search_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_urls_time_series_json": {
+            "main": "./lib/actions/post_urls_time_series_json.js",
+            "title": "Return the recent history (hourly stats for the last 30 days) for a url",
+            "description": "Return the recent history (hourly stats for the last 30 days) for a url",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_urls_time_series_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_urls_tracking_domains_json": {
+            "main": "./lib/actions/post_urls_tracking_domains_json.js",
+            "title": "Get the list of tracking domains set up for this account",
+            "description": "Get the list of tracking domains set up for this account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_urls_tracking_domains_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_users_info_json": {
+            "main": "./lib/actions/post_users_info_json.js",
+            "title": "Return the information about the API-connected user",
+            "description": "Return the information about the API-connected user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_users_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_users_ping_json": {
+            "main": "./lib/actions/post_users_ping_json.js",
+            "title": "Validate an API key and respond to a ping",
+            "description": "Validate an API key and respond to a ping",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_users_ping_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_users_ping2_json": {
+            "main": "./lib/actions/post_users_ping2_json.js",
+            "title": "Validate an API key and respond to a ping (anal JSON parser version)",
+            "description": "Validate an API key and respond to a ping (anal JSON parser version)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_users_ping2_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_users_senders_json": {
+            "main": "./lib/actions/post_users_senders_json.js",
+            "title": "Return the senders that have tried to use this account, both verified and unverified",
+            "description": "Return the senders that have tried to use this account, both verified and unverified",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_users_senders_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_webhooks_add_json": {
+            "main": "./lib/actions/post_webhooks_add_json.js",
+            "title": "Add a new webhook",
+            "description": "Add a new webhook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_webhooks_add_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_webhooks_delete_json": {
+            "main": "./lib/actions/post_webhooks_delete_json.js",
+            "title": "Delete an existing webhook",
+            "description": "Delete an existing webhook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_webhooks_delete_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_webhooks_info_json": {
+            "main": "./lib/actions/post_webhooks_info_json.js",
+            "title": "Given the ID of an existing webhook, return the data about it",
+            "description": "Given the ID of an existing webhook, return the data about it",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_webhooks_info_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_webhooks_list_json": {
+            "main": "./lib/actions/post_webhooks_list_json.js",
+            "title": "Get the list of all webhooks defined on the account",
+            "description": "Get the list of all webhooks defined on the account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_webhooks_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_webhooks_update_json": {
+            "main": "./lib/actions/post_webhooks_update_json.js",
+            "title": "Update an existing webhook",
+            "description": "Update an existing webhook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_webhooks_update_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_whitelists_add_json": {
+            "main": "./lib/actions/post_whitelists_add_json.js",
+            "title": "Adds an email to your email rejection whitelist. If the address is currently on your blacklist, that blacklist entry will be removed automatically.",
+            "description": "Adds an email to your email rejection whitelist. If the address is currently on your blacklist, that blacklist entry will be removed automatically.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_whitelists_add_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_whitelists_delete_json": {
+            "main": "./lib/actions/post_whitelists_delete_json.js",
+            "title": "Removes an email address from the whitelist.",
+            "description": "Removes an email address from the whitelist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_whitelists_delete_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_whitelists_list_json": {
+            "main": "./lib/actions/post_whitelists_list_json.js",
+            "title": "Retrieves your email rejection whitelist. You can provide an email address or search prefix to limit the results. Returns up to 1000 results.",
+            "description": "Retrieves your email rejection whitelist. You can provide an email address or search prefix to limit the results. Returns up to 1000 results.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_whitelists_list_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
